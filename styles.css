@@ -1,0 +1,43 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.flx-row {
+    display: flex;
+    justify-content:space-evenly;
+}
+
+.flx-row > div {
+    padding: 0.2in;
+}
+
+.flx-col {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+
+header {
+    background-color: black;
+    color: cornsilk;
+}
+
+section {
+    margin: 0.5in auto;
+    
+    max-width: 4in;
+    min-width: 3in;
+    max-height: 4in;
+
+    padding: 0.1in;
+    box-shadow: 5px 10px 8px #888888;
+}
+
+footer {
+    background-color: darkgrey;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
