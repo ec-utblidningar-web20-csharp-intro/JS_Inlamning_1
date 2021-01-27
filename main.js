@@ -1,13 +1,15 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", onPageLoad);
+
+function onPageLoad() {
   let inputBox = document.querySelector("#input-number");
 
-  inputBox.addEventListener("input", (event) => {
+  inputBox.oninput = function() {
     removeAllSections();
-    makeSections(parseInt(event.currentTarget.value));
-  });
-});
+    makeSections(parseInt(inputBox.value));
+  };
+}
 
-let makeSections = (count) => {
+function makeSections(count){
   for (var i = 0; i < count; i++) {
     var parent = document.querySelector("main");
 
@@ -28,21 +30,21 @@ let makeSections = (count) => {
     child.append(blurb);
     parent.append(child);
   }
-};
+}
 
-let removeAllSections = () => {
+function removeAllSections(){
   var test_sections = document.querySelectorAll("section");
   for (var i = 0; i < test_sections.length; i++) {
     test_sections[i].remove();
   }
-};
+}
 
-let makeEditable = (elem) => {
-  elem.addEventListener("click", (event) => {
+function makeEditable(elem){
+  elem.onclick = function(e) {
     elem.contentEditable = true;
     elem.focus();
-  });
-  elem.addEventListener("blur", (event) => {
+  };
+  elem.onblur = function(e) {
     elem.contentEditable = false;
-  });
-};
+  };
+}
